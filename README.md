@@ -1,5 +1,5 @@
 # ChronometerHelper
-A helper library for keeping and maintaining the state of Chronometers in Android.
+A helper class for keeping and maintaining the state of Chronometers in Android.
 
 #How to use?
 * Create an instance of ChronometerHelper
