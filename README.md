@@ -1,5 +1,6 @@
 # ChronometerHelper
-A helper class for keeping and maintaining the state of Chronometers in Android.
+A helper class for keeping and maintaining the state of Chronometers in Android. 
+Without using Service or anything. It maitains the state using SharedPreferences!
 
 #How to use?
 * Create an instance of ChronometerHelper
