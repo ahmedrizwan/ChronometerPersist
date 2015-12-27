@@ -14,12 +14,13 @@
         android:id="@+id/chronometerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="100dip"
         android:gravity="center"
         android:textSize="34sp"
         />
 
     <LinearLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/chronometerView"
@@ -42,6 +43,14 @@
           android:text="Stop"
           />
     </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxHourFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/hour_format"
+        android:layout_below="@id/buttonLayout"/>
 
   </RelativeLayout>
 </layout>

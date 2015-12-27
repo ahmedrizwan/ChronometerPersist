@@ -3,4 +3,5 @@
   <string name="resume">Resume</string>
   <string name="pause">Pause</string>
   <string name="start">Start</string>
+  <string name="hour_format">Hour Format</string>
 </resources>

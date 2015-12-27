@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import library.minimize.com.chronometer.databinding.ActivityMainBinding;
 import library.minimize.com.chronometerpersist.ChronometerPersist;
 
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         }
       }
     });
+
+    mBinding.checkBoxHourFormat.setOnCheckedChangeListener(
+        new CompoundButton.OnCheckedChangeListener() {
+          @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            chronometerPersist.hourFormat(isChecked);
+          }
+        });
 
     mBinding.stop.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
