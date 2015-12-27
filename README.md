@@ -1,40 +1,40 @@
-# ChronometerHelper
-A helper class for keeping and maintaining the state of Chronometers in Android. 
-Instead of using a service, it maintains the state using SharedPreferences so you don't have to worry about synchronization issues.  
+## ChronometerPersist
+A helper class for keeping and maintaining the state of Chronometers. 
+Instead of using a service, it maintains the state using SharedPreferences!  
 
-#How to use?
-* Create an instance of ChronometerHelper
+###How to use?
+* Create an instance of ChronometerPersist
 
 ```java
-ChronometerHelper chronometerHelper = ChronometerHelper.getInstance(mChronometer,mSharedPreferences);
+ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
 ```
 
 * When you want to start chronometer, call
 
 ```java
-chronometerHelper.startChronometer();
+chronometerPersist.startChronometer();
 ```
 * Pause 
 
 ```java
-chronometerHelper.pauseChronometer(); 
+chronometerPersist.pauseChronometer(); 
 ```
 * If you're using a single Button or trigger for Start/Pause, use this method to determine the state
 
 ```java
-if(chronometerHelper.isRunning())
-    chronometerHelper.pauseChronometer();
+if(chronometerPersist.isRunning())
+    chronometerPersist.pauseChronometer();
 else
-    chronometerHelper.startChronometer(); 
+    chronometerPersist.startChronometer(); 
 ``` 
 
 * Stop 
 
 ```java
-chronometerHelper.stopChronometer();
+chronometerPersist.stopChronometer();
 ```
 * And when you have to resume the state, inside your onResume(), call
 
 ```java
-chronometerHelper.resumeState(); 
+chronometerPersist.resumeState(); 
 ```
