@@ -28,7 +28,10 @@ isPaused();
 resumeState(); 
 ```
 
-Check out the sample for a working example!
+######Check out the sample for a working example!
+This sample demonstrates how even if you stop the app - state will be recovered.
+
+<img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronopersist.gif" width=400px  />
 
 ##Download 
 Repository available on jCenter
