@@ -10,13 +10,22 @@ ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronomet
 ```
 * Available methods
 ```java
+//Starting the chronometer
 startChronometer();
+//Stoping the chronometer
 stopChronometer();
+//Pausing the chronometer
 pauseChronometer();
-hourFormat(boolean); // if true then chronometer's format -> HH:MM:SS otherwise MM:SS
-isRunning(); //returns true if chronometer is in running mode
-isPaused(); //true if chronometer is paused
-resumeState(); //call this in onResume() and chronometer will recover state
+
+//Change format : if true then chronometer's format -> HH:MM:SS otherwise MM:SS
+hourFormat(boolean); 
+
+//Checking status
+isRunning(); 
+isPaused(); 
+
+//Status recovery: call this in onResume() and chronometer will recover state
+resumeState(); 
 ```
 
 Check out the sample for a working example!
