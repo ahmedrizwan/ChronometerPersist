@@ -24,7 +24,7 @@ hourFormat(boolean);
 isRunning(); 
 isPaused(); 
 
-//Status recovery: call this in onResume() and chronometer will recover state
+//State recovery: call this in onResume() and chronometer will recover state
 resumeState(); 
 ```
 
