@@ -3,12 +3,12 @@
 A helper library for keeping and maintaining the state of Chronometers.
 
 ###How to use it?
-* Creating an instance of ChronometerPersist passing in SharedPreferences and a chronometer.
+#####Creating an instance of ChronometerPersist
 
 ```java
 ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
 ```
-* You'll get methods
+#####Control Methods
 ```java
 //Starting the chronometer
 startChronometer();
@@ -16,19 +16,25 @@ startChronometer();
 stopChronometer();
 //Pausing the chronometer
 pauseChronometer();
-
-//Change format : if true then chronometer's format -> HH:MM:SS otherwise MM:SS
-hourFormat(boolean); 
-
+```
+#####Status Checking Methods
+```java 
 //Checking status
 isRunning(); 
 isPaused(); 
-
+```
+#####Format-Changing Method
+```java
+//if true then chronometer's format -> HH:MM:SS otherwise MM:SS
+hourFormat(boolean); 
+```
+#####State-Recovery Method
+```java
 //State recovery: call this in onResume() 
 resumeState(); 
 ```
 
-######Check out the sample for a working example!
+###### Check out the sample for a working example!
 The sample demonstrates how even if you stop the app - state will be recovered.
 
 <img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronopersist.gif" width=400px  />
