@@ -1,15 +1,14 @@
 <img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronometer.png" width=150px  />
 ## ChronometerPersist
-A helper library for keeping and maintaining the state of Chronometers. 
-Instead of relying on a Service, it maintains the state using SharedPreferences.
+A helper library for keeping and maintaining the state of Chronometers.
 
-###How to use?
-* Create an instance of ChronometerPersist
+###How to use it?
+* Creating an instance of ChronometerPersist passing in SharedPreferences and a chronometer.
 
 ```java
 ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
 ```
-* Available methods
+* You'll get methods
 ```java
 //Starting the chronometer
 startChronometer();
