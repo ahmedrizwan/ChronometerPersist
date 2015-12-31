@@ -1,6 +1,6 @@
 ## ChronometerPersist
 A helper library for keeping and maintaining the state of Chronometers. 
-Instead of using a service, it maintains the state using SharedPreferences!  
+Instead of relying on a Service, it maintains the state using SharedPreferences.
 
 ###How to use?
 * Create an instance of ChronometerPersist
@@ -24,11 +24,14 @@ hourFormat(boolean);
 isRunning(); 
 isPaused(); 
 
-//Status recovery: call this in onResume() and chronometer will recover state
+//State recovery: call this in onResume() 
 resumeState(); 
 ```
 
-Check out the sample for a working example!
+######Check out the sample for a working example!
+The sample demonstrates how even if you stop the app - state will be recovered.
+
+<img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronopersist.gif" width=400px  />
 
 ##Download 
 Repository available on jCenter
