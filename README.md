@@ -35,7 +35,7 @@ resumeState();
 ```
 
 ###### Check out the sample for a working example!
-The sample demonstrates how even if you stop the app - state will be recovered.
+The sample demonstrates how the library helps recover chronometer state even after the app stops.
 
 <img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronopersist.gif" width=400px  />
 
