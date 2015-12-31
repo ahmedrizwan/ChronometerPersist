@@ -1,3 +1,4 @@
+<img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronometer.png" width=150px  />
 ## ChronometerPersist
 A helper library for keeping and maintaining the state of Chronometers. 
 Instead of relying on a Service, it maintains the state using SharedPreferences.
