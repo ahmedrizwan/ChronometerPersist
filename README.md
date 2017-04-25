@@ -7,13 +7,13 @@
 ## ChronometerPersist
 A helper library for keeping and maintaining the state of Chronometers.
 
-###How to use it?
-#####Creating an instance of ChronometerPersist
+### How to use it?
+##### Creating an instance of ChronometerPersist
 
 ```java
 ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
 ```
-#####Control Methods
+##### Control Methods
 ```java
 //Starting the chronometer
 startChronometer();
@@ -22,18 +22,18 @@ stopChronometer();
 //Pausing the chronometer
 pauseChronometer();
 ```
-#####Status Checking Methods
+##### Status Checking Methods
 ```java 
 //Checking status
 isRunning(); 
 isPaused(); 
 ```
-#####Format-Changing Method
+##### Format-Changing Method
 ```java
 //if true then chronometer's format -> HH:MM:SS otherwise MM:SS
 hourFormat(boolean); 
 ```
-#####State-Recovery Method
+##### State-Recovery Method
 ```java
 //State recovery: call this in onResume() 
 resumeState(); 
@@ -44,7 +44,7 @@ The sample demonstrates how the library helps recover chronometer state even aft
 
 <img src="https://raw.githubusercontent.com/ahmedrizwan/ChronometerPersist/master/sample/src/main/res/drawable/chronopersist.gif" width=400px  />
 
-##Download 
+## Download 
 Repository available on jCenter
 
 ```Gradle
@@ -59,7 +59,7 @@ repositories {
 }
 ```
 
-##License 
+## License 
 ```
 Copyright 2015 Ahmed Rizwan
 
