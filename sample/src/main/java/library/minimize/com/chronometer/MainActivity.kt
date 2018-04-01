@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        mBinding.checkBoxHourFormat.setOnCheckedChangeListener { buttonView, isChecked -> chronometerPersist.hourFormat(isChecked) }
+        mBinding.checkBoxHourFormat.setOnCheckedChangeListener { _, isChecked -> chronometerPersist.hourFormat(isChecked) }
 
         mBinding.stop.setOnClickListener {
             mBinding.start.setText(R.string.start)
