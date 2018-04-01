@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/badge/jCenter-1.0.0-brightgreen.svg)](https://bintray.com/sbrukhanda/maven/FragmentViewPager)
+[![Release](https://img.shields.io/badge/jCenter-1.1.0-brightgreen.svg)](https://bintray.com/sbrukhanda/maven/FragmentViewPager)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20Version%202.0-blue.svg)](https://github.com/sbrukhanda/fragmentviewpager/blob/master/LICENSE.txt)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RxRecyclerAdapter-green.svg?style=flat)](https://android-arsenal.com/details/1/2084)
 
@@ -12,11 +12,11 @@ A helper library for keeping and maintaining the state of Chronometers.
 ### How to use it?
 ##### Creating an instance of ChronometerPersist
 
-```java
-ChronometerPersist chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
+```kotlin
+val chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
 ```
 ##### Control Methods
-```java
+```kotlin
 //Starting the chronometer
 startChronometer();
 //Stoping the chronometer
@@ -25,18 +25,18 @@ stopChronometer();
 pauseChronometer();
 ```
 ##### Status Checking Methods
-```java 
+```kotlin 
 //Checking status
 isRunning(); 
 isPaused(); 
 ```
 ##### Format-Changing Method
-```java
+```kotlin
 //if true then chronometer's format -> HH:MM:SS otherwise MM:SS
 hourFormat(boolean); 
 ```
 ##### State-Recovery Method
-```java
+```kotlin
 //State recovery: call this in onResume() 
 resumeState(); 
 ```
@@ -49,11 +49,11 @@ The sample demonstrates how the library helps recover chronometer state even aft
 ## Download 
 Repository available on jCenter
 
-```Gradle
+```groovy
 compile 'com.minimize.library:chronometerpersist:1.0.0'
 ```
 *If the dependency fails to resolve, add this to your project repositories*
-```Gradle
+```groovy
 repositories {
   maven {
       url  "http://dl.bintray.com/ahmedrizwan/maven" 
@@ -77,4 +77,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
