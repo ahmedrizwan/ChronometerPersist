@@ -1,9 +1,9 @@
 package library.minimize.com.chronometer
 
 import android.content.Context
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import library.minimize.com.chronometer.databinding.ActivityMainBinding
 import library.minimize.com.chronometerpersist.ChronometerPersist
 

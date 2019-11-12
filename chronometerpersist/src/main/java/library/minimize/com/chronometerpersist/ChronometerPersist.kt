@@ -131,9 +131,9 @@ class ChronometerPersist private constructor() {
 
     companion object {
 
-        private val KEY_TIME_PAUSED = "TimePaused"
-        private val KEY_BASE = "TimeBase"
-        private val KEY_STATE = "ChronometerState"
+        private const val KEY_TIME_PAUSED = "TimePaused"
+        private const val KEY_BASE = "TimeBase"
+        private const val KEY_STATE = "ChronometerState"
 
         fun getInstance(chronometer: Chronometer,
                         sharedPreferences: SharedPreferences): ChronometerPersist {

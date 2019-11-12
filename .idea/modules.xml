@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Chronometer.iml" filepath="$PROJECT_DIR$/Chronometer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChronometerPersist.iml" filepath="$PROJECT_DIR$/ChronometerPersist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chronometerpersist/ChronometerPersist-chronometerpersist.iml" filepath="$PROJECT_DIR$/chronometerpersist/ChronometerPersist-chronometerpersist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/ChronometerPersist-sample.iml" filepath="$PROJECT_DIR$/sample/ChronometerPersist-sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/chronometerpersist/chronometerpersist.iml" filepath="$PROJECT_DIR$/chronometerpersist/chronometerpersist.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
