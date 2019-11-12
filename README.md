@@ -13,7 +13,11 @@ A helper library for keeping and maintaining the state of Chronometers.
 ##### Creating an instance of ChronometerPersist
 
 ```kotlin
-val chronometerPersist = ChronometerPersist.getInstance(chronometer, sharedPreferences);
+val chronometerPersist = ChronometerPersist.getInstance(
+                              chronometer = chronometerView,
+                              identifier = "mainChronometer", // unique identifier
+                              sharedPreferences = mySharedPreferences
+                         )
 ```
 ##### Control Methods
 ```kotlin
@@ -50,7 +54,7 @@ The sample demonstrates how the library helps recover chronometer state even aft
 Repository available on jCenter
 
 ```groovy
-compile 'com.minimize.library:chronometerpersist:1.1.0'
+compile 'com.minimize.library:chronometerpersist:1.2.0'
 ```
 *If the dependency fails to resolve, add this to your project repositories*
 ```groovy
