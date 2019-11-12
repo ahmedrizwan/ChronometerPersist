@@ -8,18 +8,23 @@ class ChronometerPersist private constructor() {
     private var isHourFormat = false
 
     lateinit var mChronometer: Chronometer
-    var mTimeWhenPaused: Long = 0
-    var mTimeBase: Long = 0
+    lateinit var identifier: String
+    private var mTimeWhenPaused: Long = 0
+    private var mTimeBase: Long = 0
 
     lateinit var sharedPreferences: SharedPreferences
 
     val isRunning: Boolean
-        get() = ChronometerState.values()[sharedPreferences.getInt(KEY_STATE + mChronometer.id,
-                ChronometerState.Stopped.ordinal)] == ChronometerState.Running
+        get() = ChronometerState.values()[sharedPreferences.getInt(
+            KEY_STATE + identifier,
+            ChronometerState.Stopped.ordinal
+        )] == ChronometerState.Running
 
     val isPaused: Boolean
-        get() = ChronometerState.values()[sharedPreferences.getInt(KEY_STATE + mChronometer.id,
-                ChronometerState.Stopped.ordinal)] == ChronometerState.Paused
+        get() = ChronometerState.values()[sharedPreferences.getInt(
+            KEY_STATE + identifier,
+            ChronometerState.Stopped.ordinal
+        )] == ChronometerState.Paused
 
     internal enum class ChronometerState {
         Running, Paused, Stopped
@@ -51,8 +56,10 @@ class ChronometerPersist private constructor() {
     }
 
     private fun pauseStateChronometer() {
-        mTimeWhenPaused = sharedPreferences.getLong(KEY_TIME_PAUSED + mChronometer.id,
-                mChronometer.base - SystemClock.elapsedRealtime())
+        mTimeWhenPaused = sharedPreferences.getLong(
+            KEY_TIME_PAUSED + identifier,
+            mChronometer.base - SystemClock.elapsedRealtime()
+        )
         //some negative value
         mChronometer.base = SystemClock.elapsedRealtime() + mTimeWhenPaused
         mChronometer.stop()
@@ -67,7 +74,7 @@ class ChronometerPersist private constructor() {
     }
 
     private fun storeState(state: ChronometerState) {
-        sharedPreferences.edit().putInt(KEY_STATE + mChronometer.id, state.ordinal).apply()
+        sharedPreferences.edit().putInt(KEY_STATE + identifier, state.ordinal).apply()
     }
 
     fun startChronometer() {
@@ -77,9 +84,11 @@ class ChronometerPersist private constructor() {
     }
 
     private fun startStateChronometer() {
-        mTimeBase = sharedPreferences.getLong(KEY_BASE + mChronometer.id,
-                SystemClock.elapsedRealtime()) //0
-        mTimeWhenPaused = sharedPreferences.getLong(KEY_TIME_PAUSED + mChronometer.id, 0)
+        mTimeBase = sharedPreferences.getLong(
+            KEY_BASE + identifier,
+            SystemClock.elapsedRealtime()
+        ) //0
+        mTimeWhenPaused = sharedPreferences.getLong(KEY_TIME_PAUSED + identifier, 0)
         mChronometer.base = mTimeBase + mTimeWhenPaused
         mChronometer.start()
     }
@@ -98,28 +107,32 @@ class ChronometerPersist private constructor() {
     private fun clearState() {
         storeState(ChronometerState.Stopped)
         sharedPreferences.edit()
-                .remove(KEY_BASE + mChronometer.id)
-                .remove(KEY_TIME_PAUSED + mChronometer.id)
-                .apply()
+            .remove(KEY_BASE + identifier)
+            .remove(KEY_TIME_PAUSED + identifier)
+            .apply()
         mTimeWhenPaused = 0
     }
 
     private fun saveBase() {
         sharedPreferences.edit()
-                .putLong(KEY_BASE + mChronometer.id, SystemClock.elapsedRealtime())
-                .apply()
+            .putLong(KEY_BASE + identifier, SystemClock.elapsedRealtime())
+            .apply()
     }
 
     private fun saveTimeWhenPaused() {
         sharedPreferences.edit()
-                .putLong(KEY_TIME_PAUSED + mChronometer.id,
-                        mChronometer.base - SystemClock.elapsedRealtime())
-                .apply()
+            .putLong(
+                KEY_TIME_PAUSED + identifier,
+                mChronometer.base - SystemClock.elapsedRealtime()
+            )
+            .apply()
     }
 
     fun resumeState() {
-        val state = ChronometerState.values()[sharedPreferences.getInt(KEY_STATE + mChronometer.id,
-                ChronometerState.Stopped.ordinal)]
+        val state = ChronometerState.values()[sharedPreferences.getInt(
+            KEY_STATE + identifier,
+            ChronometerState.Stopped.ordinal
+        )]
         if (state.ordinal == ChronometerState.Stopped.ordinal) {
             stopChronometer()
         } else if (state.ordinal == ChronometerState.Paused.ordinal) {
@@ -135,11 +148,14 @@ class ChronometerPersist private constructor() {
         private const val KEY_BASE = "TimeBase"
         private const val KEY_STATE = "ChronometerState"
 
-        fun getInstance(chronometer: Chronometer,
-                        sharedPreferences: SharedPreferences): ChronometerPersist {
+        fun getInstance(
+            chronometer: Chronometer, identifier: String,
+            sharedPreferences: SharedPreferences
+        ): ChronometerPersist {
             val chronometerPersist = ChronometerPersist()
             chronometerPersist.sharedPreferences = sharedPreferences
             chronometerPersist.mChronometer = chronometer
+            chronometerPersist.identifier = identifier
             return chronometerPersist
         }
     }

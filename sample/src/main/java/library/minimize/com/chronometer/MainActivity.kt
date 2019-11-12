@@ -17,7 +17,11 @@ class MainActivity : AppCompatActivity() {
         val mBinding = mBinding ?: return
 
         val sharedPreferences = getSharedPreferences("ChronometerSample", Context.MODE_PRIVATE)
-        chronometerPersist = ChronometerPersist.getInstance(mBinding.chronometerView, sharedPreferences)
+        chronometerPersist = ChronometerPersist.getInstance(
+            chronometer = mBinding.chronometerView,
+            identifier = "mainChronometer",
+            sharedPreferences = sharedPreferences
+        )
         val chronometerPersist = chronometerPersist ?: return
         //chronometerPersist.hourFormat(true);
         mBinding.start.setOnClickListener {
@@ -30,7 +34,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        mBinding.checkBoxHourFormat.setOnCheckedChangeListener { _, isChecked -> chronometerPersist.hourFormat(isChecked) }
+        mBinding.checkBoxHourFormat.setOnCheckedChangeListener { _, isChecked ->
+            chronometerPersist.hourFormat(
+                isChecked
+            )
+        }
 
         mBinding.stop.setOnClickListener {
             mBinding.start.setText(R.string.start)
