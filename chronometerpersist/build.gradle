@@ -1,56 +1,53 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 ext {
-  // Where you will see your artifact in Bintray's web interface
-  // The "bintrayName" should match the name of the Bintray repro.
-  bintrayRepo = 'maven'
-  bintrayName = 'chronometerpersist'
+    // Where you will see your artifact in Bintray's web interface
+    // The "bintrayName" should match the name of the Bintray repro.
+    bintrayRepo = 'maven'
+    bintrayName = 'chronometerpersist'
 
-  // Maven metadata
-  publishedGroupId = 'com.minimize.library'
-  libraryName = 'ChronometerPersist'
-  // Save yourself a head ache, and set this equal to the name of the Android Studio library
-  // module. The artifact name needs to match the name of the library.
-  artifact = 'chronometerpersist'
+    // Maven metadata
+    publishedGroupId = 'com.minimize.library'
+    libraryName = 'ChronometerPersist'
+    // Save yourself a head ache, and set this equal to the name of the Android Studio library
+    // module. The artifact name needs to match the name of the library.
+    artifact = 'chronometerpersist'
 
-  libraryDescription = 'A simple Chronometer state persisting library.'
-  libraryVersion = '1.1.0'
+    libraryDescription = 'A simple Chronometer state persisting library.'
+    libraryVersion = '1.2.0'
 
-  developerId = 'ahmedrizwan'
-  developerName = 'Ahmed Rizwan'
-  developerEmail = 'ahmedrizwan@outlook.com'
+    developerId = 'ahmedrizwan'
+    developerName = 'Ahmed Rizwan'
+    developerEmail = 'ahmedrizwan@outlook.com'
 
 }
 
 android {
-  compileSdkVersion 27
-  buildToolsVersion '27.0.3'
+    compileSdkVersion 29
 
-  defaultConfig {
-    minSdkVersion 14
-    targetSdkVersion 27
-    versionCode 1
-    versionName "1.0"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
     }
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 tasks.withType(Javadoc).all {
-  enabled = false
+    enabled = false
 }
 
-ext.support_version = "27.1.0"
-
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  testCompile 'junit:junit:4.12'
-  implementation "com.android.support:appcompat-v7:$support_version"
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
