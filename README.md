@@ -54,7 +54,7 @@ The sample demonstrates how the library helps recover chronometer state even aft
 Repository available on jCenter
 
 ```groovy
-compile 'com.minimize.library:chronometerpersist:1.2.0'
+implementation 'com.minimize.library:chronometerpersist:1.2.0'
 ```
 *If the dependency fails to resolve, add this to your project repositories*
 ```groovy
